@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// --- MODELO PARA EL PANEL DE CONTROL (LOGIN) ---
+model User {
+  id       String  @id @default(uuid())
+  email    String  @unique
+  password String // Aquí guardaremos el hash de la contraseña, NUNCA en texto plano
+  name     String? // Ej. "Homero"
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// --- MODELO PARA LAS INVITACIONES ---
+model Guest {
+  id String @id @default(uuid())
+
+  // Código único para la URL (ej. "familia-garcia-xyz" -> /invitacion/familia-garcia-xyz)
+  slug String @unique
+
+  // Datos que se mostrarán en la invitación
+  name    String // ej. "Familia García Pérez" o "Carlos y Acompañante"
+  tickets Int // Total de pases asignados
+  table   String? // Número o letra de mesa. Puede ser nulo si aún no asignas mesa.
+
+  isConfirmed Boolean @default(false) // Para saber si ya confirmaron asistencia
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug]) // Índice para que la búsqueda por URL en Next.js sea ultrarrápida
+}
