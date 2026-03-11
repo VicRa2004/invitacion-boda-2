@@ -1,8 +1,12 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
 :root {
-  --primary-blue: #1e3a5f;
+  --primary-blue: #0f1f38; /* Azul marino más profundo y elegante */
+  --accent-gold: #c5a880;  /* Tono champagne/dorado */
   --text-dark: #333333;
-  --bg-color: #f4efe9;
-  --card-bg: #ffffff;
+  --bg-light: #fdfcfb;
+  --bg-dark: var(--primary-blue);
 }
 
 * {
@@ -11,355 +15,183 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--bg-color);
-  color: var(--text-dark);
   font-family: var(--font-sans);
   line-height: 1.6;
-  text-align: center;
+  background-color: var(--bg-light);
+  overflow-x: hidden;
 }
 
-.background-texture {
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
+/* Utilidades de texto */
+.text-center { text-align: center; }
+.text-white { color: #ffffff !important; }
+.text-gold { color: var(--accent-gold) !important; }
+.mt-2 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 4rem; }
+.mb-2 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 3.5rem; }
+.pt-0 { padding-top: 0 !important; }
+
+/* =========================================
+   ANIMACIONES GLOBALES
+   ========================================= */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
 }
 
-.invitation-card {
-  background-color: var(--card-bg);
-  max-width: 600px;
-  width: 100%;
-  padding: 4rem 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
 }
 
+/* =========================================
+   ESTRUCTURA DE SECCIONES FULL-WIDTH
+   ========================================= */
 section {
-  margin-bottom: 3.5rem;
+  width: 100%;
+  position: relative;
 }
 
-.hero .pre-title {
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.section-light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.section-dark {
+  background-color: var(--bg-dark);
+  color: #ffffff;
+}
+
+/* =========================================
+   HERO A PANTALLA COMPLETA
+   ========================================= */
+.hero-fullscreen {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slowZoom 25s alternate infinite ease-in-out;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  /* Gradiente oscuro para asegurar que el texto blanco sea legible */
+  background: radial-gradient(circle, rgba(15, 31, 56, 0.6) 0%, rgba(15, 31, 56, 0.2) 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero-overlay .pre-title {
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--primary-blue);
-  letter-spacing: 2px;
+  color: var(--accent-gold);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-.names {
+.hero-overlay .names {
   font-family: var(--font-script);
-  font-size: 4.5rem;
-  color: var(--primary-blue);
-  line-height: 1.1;
+  font-size: clamp(4.5rem, 10vw, 8rem);
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.names span {
-  font-size: 2.5rem;
+.hero-overlay .names span {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--accent-gold);
+}
+
+/* =========================================
+   TIPOGRAFÍA Y TEXTOS
+   ========================================= */
+.section-title {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--primary-blue);
+  margin-bottom: 2rem;
 }
 
 .quote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1rem;
-  color: #666;
-  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 .bible-verse {
   display: block;
-  margin-top: 1rem;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 0.9rem;
-}
-
-.parents {
-  font-family: var(--font-serif);
-}
-
-.intro-text {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.parents-names p {
-  margin-bottom: 0.5rem;
-}
-
-.parents-groom {
-  margin-bottom: 1rem;
-}
-
-.invitation-text {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  padding: 0 1rem;
-}
-
-.date-box {
-  display: inline-block;
-  border-top: 2px solid var(--primary-blue);
-  border-bottom: 2px solid var(--primary-blue);
-  padding: 1rem 2rem;
-  font-family: var(--font-serif);
-}
-
-.date-box span {
-  display: block;
-}
-
-.date-box .number {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--primary-blue);
-  line-height: 1;
-  margin: 0.5rem 0;
-}
-
-.section-title {
-  font-family: var(--font-script);
-  font-size: 3rem;
-  color: var(--primary-blue);
-  margin-bottom: 1rem;
-}
-
-.location {
-  margin-bottom: 3rem;
-}
-
-.time {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.place {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-}
-
-.address {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  display: inline-block;
-  background-color: transparent;
-  color: var(--primary-blue);
-  border: 1px solid var(--primary-blue);
-  padding: 0.6rem 1.5rem;
-  text-decoration: none;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn:hover {
-  background-color: var(--primary-blue);
-  color: white;
-}
-
-.btn-primary {
-  background-color: var(--primary-blue);
-  color: white;
   margin-top: 1.5rem;
-}
-
-.btn-primary:hover {
-  background-color: #152b47;
-}
-
-.timeline {
-  list-style: none;
-  text-align: left;
-  max-width: 300px;
-  margin: 0 auto;
-  border-left: 2px solid var(--primary-blue);
-  padding-left: 1.5rem;
-}
-
-.timeline li {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.timeline li::before {
-  content: "";
-  position: absolute;
-  left: -1.9rem;
-  top: 0.4rem;
-  width: 12px;
-  height: 12px;
-  background-color: var(--primary-blue);
-  border-radius: 50%;
-}
-
-.dress-code p {
-  font-family: var(--font-sans);
-}
-
-.dress-style {
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-gold);
+  font-size: 0.95rem;
   letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
-.dress-note {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-@media (max-width: 480px) {
-  .names {
-    font-size: 3.5rem;
-  }
-  .invitation-card {
-    padding: 2rem 1rem;
-  }
-  .section-title {
-    font-size: 2.5rem;
-  }
-}
-
-/* --- NUEVOS ESTILOS PARA IMÁGENES Y CARRUSEL --- */
-
-/* Contenedor principal de la tarjeta ajustado */
-.invitation-card {
-  /* ... tus estilos anteriores ... */
-  padding: 0 0 4rem 0; /* Quitamos el padding top para que la imagen llegue al borde */
-}
-
-/* Secciones generales con padding restaurado */
-section {
-  padding: 0 2rem;
-  margin-bottom: 3.5rem;
-}
-
-/* Imagen Hero y Efecto Papel Rasgado */
-.hero-image-container {
-  position: relative;
-  width: 100%;
-  height: 400px; /* Altura de la imagen principal */
-  margin-bottom: 2rem;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.torn-edge {
-  position: absolute;
-  bottom: -1px; /* Evita una línea fina no deseada */
-  left: 0;
-  width: 100%;
-  height: 40px;
-  /* SVG inyectado por CSS para hacer los picos del papel */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200 120L0 120 0 0 15 22 35 5 55 28 85 10 115 28 150 5 180 25 210 10 240 30 270 12 300 35 330 15 360 40 390 20 420 45 450 25 480 50 510 30 540 55 570 35 600 60 630 40 660 65 690 45 720 70 750 50 780 75 810 55 840 80 870 60 900 85 930 65 960 90 990 70 1020 95 1050 75 1080 100 1110 80 1140 105 1170 85 1200 110z' fill='%23ffffff'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center;
-}
-
-/* Imágenes decorativas intermedias */
-.decorative-image-section {
-  padding: 0 2rem;
-  margin-bottom: 3.5rem;
-}
-
-.decorative-img {
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Carrusel de Imágenes */
-.gallery-section {
-  padding: 0; /* Reseteado para que el scroll toque los bordes */
-  margin-bottom: 4rem;
-}
-
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 1rem;
-  padding: 1rem 2rem 2rem 2rem;
-  /* Ocultar barra de scroll en navegadores */
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-item {
-  scroll-snap-align: center;
-  flex: 0 0 75%; /* Ancho de cada tarjeta en el carrusel */
-  height: 350px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-hint {
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: -10px;
-  font-style: italic;
-}
-
-/* Ajustes adicionales para móviles */
-@media (max-width: 480px) {
-  .hero-image-container {
-    height: 300px;
-  }
-  .carousel-item {
-    flex: 0 0 85%;
-    height: 300px;
-  }
-}
-
-
-/* --- ESTILOS PASE DE INVITADO --- */
-.guest-pass {
-  padding: 0 2rem;
-  margin-bottom: 3.5rem;
-}
-
+/* =========================================
+   PASE DE INVITADO (GUEST CARD)
+   ========================================= */
 .guest-card {
-  background-color: #f9f6f0; /* Un tono ligeramente distinto al fondo */
-  border: 1px solid var(--primary-blue);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  max-width: 600px;
+  margin: -10rem auto 4rem auto; /* Se superpone ligeramente al Hero */
+  position: relative;
+  z-index: 10;
 }
 
 .guest-name {
   font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: var(--primary-blue);
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(30, 58, 95, 0.2);
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+  padding-bottom: 1.5rem;
 }
 
 .guest-details {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -371,14 +203,239 @@ section {
 .detail-label {
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #666;
+  letter-spacing: 2px;
+  color: #888;
   margin-bottom: 0.5rem;
 }
 
 .detail-value {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: var(--primary-blue);
+  line-height: 1;
+}
+
+/* =========================================
+   PADRES, FECHAS Y UBICACIONES
+   ========================================= */
+.parents-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+.date-box {
+  display: inline-block;
+  border-top: 2px solid var(--accent-gold);
+  border-bottom: 2px solid var(--accent-gold);
+  padding: 1.5rem 4rem;
+  font-family: var(--font-serif);
+}
+
+.date-box .number {
+  display: block;
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+  margin: 0.5rem 0;
+}
+
+.date-box .day, .date-box .month {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1rem;
+  color: var(--accent-gold);
+}
+
+.locations-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.location-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.location-card .time {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+}
+
+.location-card .place {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.location-card .address {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   IMAGEN PARALLAX Y GALERÍA
+   ========================================= */
+.image-break {
+  width: 100%;
+  height: 50vh;
+  min-height: 400px;
+}
+
+.parallax-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar { display: none; }
+
+.carousel-item {
+  scroll-snap-align: center;
+  flex: 0 0 85%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-hint {
+  font-size: 0.9rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* =========================================
+   ITINERARIO
+   ========================================= */
+.timeline {
+  list-style: none;
+  text-align: left;
+  max-width: 450px;
+  margin: 0 auto;
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 2.5rem;
+}
+
+.timeline li {
+  margin-bottom: 2.5rem;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -2.9rem;
+  top: 0.3rem;
+  width: 16px;
+  height: 16px;
+  background-color: var(--bg-light);
+  border: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline li:hover::before {
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  transform: scale(1.2);
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-blue);
+  transform: translateY(-3px);
+}
+
+.btn-solid-gold {
+  background-color: var(--accent-gold);
+  color: var(--primary-blue);
+  border: 1px solid var(--accent-gold);
+  box-shadow: 0 10px 20px rgba(197, 168, 128, 0.2);
+}
+
+.btn-solid-gold:hover {
+  background-color: #d1b894;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(197, 168, 128, 0.4);
+}
+
+/* =========================================
+   MEDIA QUERIES (ESCRITORIO)
+   ========================================= */
+@media (min-width: 768px) {
+  .parents-grid {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  .locations-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .location-card {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .carousel-item {
+    flex: 0 0 40%; 
+    height: 500px;
+  }
+  
+  .parallax-img {
+    background-attachment: fixed; /* Activa el efecto Parallax real en escritorio */
+  }
 }

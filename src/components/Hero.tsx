@@ -1,24 +1,25 @@
+import ScrollReveal from "./ScrollReveal";
+
 export default function Hero() {
   return (
-    <>
-      <div className="hero-image-container">
-        <img
-          src="https://picsum.photos/id/1014/800/600"
-          alt="Homero y Larissa"
-          className="hero-image"
-        />
-        <div className="torn-edge"></div>
+    <section className="hero-fullscreen">
+      <img
+        src="https://picsum.photos/id/1014/1920/1080"
+        alt="Boda Homero y Larissa"
+        className="hero-bg-image"
+      />
+      <div className="hero-overlay">
+        <ScrollReveal delay={0.2}>
+          <p className="pre-title">Nuestra Boda</p>
+          <h1 className="names">
+            Homero
+            <br />
+            <span>&</span>
+            <br />
+            Larissa
+          </h1>
+        </ScrollReveal>
       </div>
-      <section className="hero">
-        <p className="pre-title">Nuestra Boda</p>
-        <h1 className="names">
-          Homero
-          <br />
-          <span>&</span>
-          <br />
-          Larissa
-        </h1>
-      </section>
-    </>
+    </section>
   );
 }
