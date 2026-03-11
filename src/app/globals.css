@@ -227,3 +227,158 @@ section {
     font-size: 2.5rem;
   }
 }
+
+/* --- NUEVOS ESTILOS PARA IMÁGENES Y CARRUSEL --- */
+
+/* Contenedor principal de la tarjeta ajustado */
+.invitation-card {
+  /* ... tus estilos anteriores ... */
+  padding: 0 0 4rem 0; /* Quitamos el padding top para que la imagen llegue al borde */
+}
+
+/* Secciones generales con padding restaurado */
+section {
+  padding: 0 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Imagen Hero y Efecto Papel Rasgado */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Altura de la imagen principal */
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.torn-edge {
+  position: absolute;
+  bottom: -1px; /* Evita una línea fina no deseada */
+  left: 0;
+  width: 100%;
+  height: 40px;
+  /* SVG inyectado por CSS para hacer los picos del papel */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200 120L0 120 0 0 15 22 35 5 55 28 85 10 115 28 150 5 180 25 210 10 240 30 270 12 300 35 330 15 360 40 390 20 420 45 450 25 480 50 510 30 540 55 570 35 600 60 630 40 660 65 690 45 720 70 750 50 780 75 810 55 840 80 870 60 900 85 930 65 960 90 990 70 1020 95 1050 75 1080 100 1110 80 1140 105 1170 85 1200 110z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Imágenes decorativas intermedias */
+.decorative-image-section {
+  padding: 0 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.decorative-img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Carrusel de Imágenes */
+.gallery-section {
+  padding: 0; /* Reseteado para que el scroll toque los bordes */
+  margin-bottom: 4rem;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+  /* Ocultar barra de scroll en navegadores */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  scroll-snap-align: center;
+  flex: 0 0 75%; /* Ancho de cada tarjeta en el carrusel */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: -10px;
+  font-style: italic;
+}
+
+/* Ajustes adicionales para móviles */
+@media (max-width: 480px) {
+  .hero-image-container {
+    height: 300px;
+  }
+  .carousel-item {
+    flex: 0 0 85%;
+    height: 300px;
+  }
+}
+
+
+/* --- ESTILOS PASE DE INVITADO --- */
+.guest-pass {
+  padding: 0 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.guest-card {
+  background-color: #f9f6f0; /* Un tono ligeramente distinto al fondo */
+  border: 1px solid var(--primary-blue);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.guest-name {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(30, 58, 95, 0.2);
+  padding-bottom: 1rem;
+}
+
+.guest-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.detail-value {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+}
