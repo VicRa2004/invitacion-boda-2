@@ -1,61 +1,43 @@
-import Hero from "@/components/Hero";
-import GuestPass from "@/components/GuestPass";
-import StoryAndParents from "@/components/StoryAndParents";
-import ParallaxDivider from "@/components/ParallaxDivider";
-import EventDetails from "@/components/EventDetails";
-import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
-import Gallery from "@/components/Gallery";
-import RSVP from "@/components/RSVP";
+import Link from "next/link";
+import "./home.css";
 
-export default function Home() {
-  // Simulación de datos dinámicos
-  const guestData = {
-    name: "Familia García Pérez",
-    tickets: 4,
-    table: 12,
-  };
-
+export default function HomePage() {
   return (
-    <main className="modern-web-experience">
-      <Hero />
+    <main className="home">
+      {/* ── Fondo decorativo ── */}
+      <div className="home__bg" aria-hidden="true" />
 
-      {/* --- SECCIÓN CLARA: PASE, FRASE Y PADRES --- */}
-      <section className="section-light">
-        <div className="container text-center">
-          <GuestPass
-            guestName={guestData.name}
-            totalGuests={guestData.tickets}
-            tableNumber={guestData.table}
-          />
-          <StoryAndParents />
+      {/* ── Contenido central ── */}
+      <section className="home__hero">
+        <p className="home__pre-title">Bienvenidos</p>
+        <h1 className="home__title">Homero &amp; Larissa</h1>
+        <span className="home__divider" />
+
+        <p className="home__description">
+          Esta es la plataforma oficial de nuestra boda. Aquí podrás consultar tu
+          invitación personalizada con los detalles del evento, confirmar tu
+          asistencia y conocer toda la información que necesitas para acompañarnos
+          en este día tan especial.
+        </p>
+
+        <div className="home__actions">
+          <Link href="/login" className="btn btn-solid-gold" id="home-login-btn">
+            Iniciar sesión
+          </Link>
+          <Link
+            href="/invitacion"
+            className="btn btn-outline-gold"
+            id="home-preview-btn"
+          >
+            Ver invitación de ejemplo
+          </Link>
         </div>
       </section>
 
-      {/* --- DIVISOR PARALLAX --- */}
-      <ParallaxDivider
-        src="https://picsum.photos/id/1069/1920/600"
-        alt="Detalle floral"
-      />
-
-      {/* --- SECCIÓN OSCURA: FECHA Y UBICACIONES --- */}
-      <section className="section-dark">
-        <div className="container text-center">
-          <EventDetails />
-        </div>
-      </section>
-
-      {/* --- SECCIÓN CLARA: ITINERARIO Y CÓDIGO DE VESTIMENTA --- */}
-      <section className="section-light">
-        <div className="container text-center">
-          <ItineraryAndDressCode />
-        </div>
-      </section>
-
-      {/* --- GALERÍA --- */}
-      <Gallery />
-
-      {/* --- FOOTER: RSVP --- */}
-      <RSVP guestName={guestData.name} />
+      {/* ── Footer sutil ── */}
+      <footer className="home__footer">
+        <p>Con amor, Homero &amp; Larissa &bull; 2026</p>
+      </footer>
     </main>
   );
 }
