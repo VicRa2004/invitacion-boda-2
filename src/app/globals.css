@@ -411,6 +411,85 @@ section {
 }
 
 /* =========================================
+   RSVP — Confirmación de asistencia
+   ========================================= */
+.rsvp-confirmed {
+  padding: 2rem 0;
+  animation: rsvpReveal 0.6s ease-out both;
+}
+
+@keyframes rsvpReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rsvp-confirmed__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.15);
+  border: 2px solid rgba(34, 197, 94, 0.4);
+  font-size: 2.5rem;
+  color: #86efac;
+  animation: checkBounce 0.5s ease 0.3s both;
+}
+
+@keyframes checkBounce {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.rsvp-confirmed__title {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.rsvp-confirmed__subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.rsvp-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 480px) {
+  .rsvp-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.rsvp-message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.rsvp-message--error {
+  color: #fca5a5;
+}
+
+/* =========================================
    MEDIA QUERIES (ESCRITORIO)
    ========================================= */
 @media (min-width: 768px) {
