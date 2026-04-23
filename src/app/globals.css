@@ -518,3 +518,167 @@ section {
     background-attachment: fixed; /* Activa el efecto Parallax real en escritorio */
   }
 }
+
+/* =========================================
+   SIN NIÑOS — NO CHILDREN SECTION
+   ========================================= */
+.no-children-section {
+  padding: 0;
+}
+
+.no-children-icon {
+  margin: 0 auto 2rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(197, 168, 128, 0.08);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+}
+
+.no-children-svg {
+  width: 60px;
+  height: 60px;
+  color: var(--accent-gold);
+}
+
+.no-children-title {
+  color: var(--accent-gold) !important;
+  margin-bottom: 1.5rem;
+}
+
+.no-children-quote {
+  color: rgba(255, 255, 255, 0.75) !important;
+  max-width: 560px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+.no-children-badge {
+  margin-top: 2.5rem;
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent-gold);
+  background: rgba(197, 168, 128, 0.05);
+}
+
+/* =========================================
+   GIFT INFO — SECCIÓN DE REGALO
+   ========================================= */
+.gift-section {
+  padding: 0;
+}
+
+.gift-envelope-wrapper {
+  margin: 0 auto 2.5rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  animation: float 4s ease-in-out infinite;
+}
+
+.gift-envelope-svg {
+  width: 80px;
+  height: 60px;
+}
+
+.gift-title {
+  color: var(--primary-blue) !important;
+  margin-bottom: 2rem;
+}
+
+.gift-card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.gift-primary-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+.gift-primary-text strong {
+  color: var(--primary-blue);
+}
+
+.gift-divider {
+  margin: 1.5rem auto;
+  color: var(--accent-gold);
+  font-size: 1.3rem;
+  opacity: 0.6;
+}
+
+.gift-secondary-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.gift-secondary-text strong {
+  color: var(--primary-blue);
+  font-style: normal;
+}
+
+/* =========================================
+   AUDIO PLAYER — BOTÓN FLOTANTE
+   ========================================= */
+@keyframes audioPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(197, 168, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0); }
+}
+
+.audio-player-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-blue);
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease;
+  outline: none;
+}
+
+.audio-player-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.audio-player-btn:hover {
+  transform: scale(1.1);
+  background: #162d52;
+  color: var(--accent-gold);
+}
+
+.audio-player-btn--playing {
+  color: var(--accent-gold);
+  animation: audioPulse 2s infinite;
+}

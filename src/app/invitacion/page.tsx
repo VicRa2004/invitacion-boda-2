@@ -4,8 +4,11 @@ import StoryAndParents from "@/components/StoryAndParents";
 import ParallaxDivider from "@/components/ParallaxDivider";
 import EventDetails from "@/components/EventDetails";
 import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
+import NoChildren from "@/components/NoChildren";
 import Gallery from "@/components/Gallery";
+import GiftInfo from "@/components/GiftInfo";
 import RSVP from "@/components/RSVP";
+import AudioPlayer from "@/components/AudioPlayer";
 
 /**
  * Vista de ejemplo de la invitación (sin datos reales).
@@ -50,9 +53,20 @@ export default function InvitacionEjemploPage() {
         </div>
       </section>
 
+      {/* --- SECCIÓN: SIN NIÑOS --- */}
+      <NoChildren />
+
+      {/* --- GALERÍA --- */}
       <Gallery />
 
+      {/* --- SECCIÓN: INFORMACIÓN DE REGALO --- */}
+      <GiftInfo />
+
+      {/* --- FOOTER: RSVP --- */}
       <RSVP guestName={exampleData.name} />
+
+      {/* --- BOTÓN FLOTANTE DE AUDIO --- */}
+      <AudioPlayer />
     </main>
   );
 }

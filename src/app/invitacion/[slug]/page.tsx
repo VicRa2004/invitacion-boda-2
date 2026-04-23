@@ -6,8 +6,11 @@ import StoryAndParents from "@/components/StoryAndParents";
 import ParallaxDivider from "@/components/ParallaxDivider";
 import EventDetails from "@/components/EventDetails";
 import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
+import NoChildren from "@/components/NoChildren";
 import Gallery from "@/components/Gallery";
+import GiftInfo from "@/components/GiftInfo";
 import RSVP from "@/components/RSVP";
+import AudioPlayer from "@/components/AudioPlayer";
 import { getGuestBySlug } from "@/services/guest.service";
 
 type Props = {
@@ -72,11 +75,20 @@ export default async function InvitacionDinamicaPage({ params }: Props) {
         </div>
       </section>
 
+      {/* --- SECCIÓN OSCURA: SIN NIÑOS --- */}
+      <NoChildren />
+
       {/* --- GALERÍA --- */}
       <Gallery />
 
+      {/* --- SECCIÓN CLARA: INFORMACIÓN DE REGALO --- */}
+      <GiftInfo />
+
       {/* --- FOOTER: RSVP --- */}
       <RSVP guestName={guest.name} slug={guest.slug} isConfirmed={guest.isConfirmed} />
+
+      {/* --- BOTÓN FLOTANTE DE AUDIO --- */}
+      <AudioPlayer />
     </main>
   );
 }
