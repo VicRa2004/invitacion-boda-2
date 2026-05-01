@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero-fullscreen">
       <img
-        src="https://picsum.photos/id/1014/1920/1080"
+        src="/img-4.jpg"
         alt="Boda Homero y Larissa"
         className="hero-bg-image"
       />

@@ -7,7 +7,7 @@ export default function ParallaxDivider({
 }) {
   return (
     <section className="image-break">
-      <img src={src} alt={alt} className="parallax-img" />
+      <img src="/img-1.jpg" alt={alt} className="parallax-img" />
     </section>
   );
 }
