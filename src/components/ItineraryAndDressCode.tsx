@@ -53,7 +53,7 @@ export default function ItineraryAndDressCode() {
                 className="color-swatch__circle"
                 style={{ backgroundColor: "#2E7D62" }}
               />
-              <span className="color-swatch__name">Verde esmeralda</span>
+              <span className="color-swatch__name">Verde Esmeralda</span>
             </div>
           </div>
           <p
@@ -65,8 +65,7 @@ export default function ItineraryAndDressCode() {
               lineHeight: 1.5,
             }}
           >
-            Con delicadeza, te pedimos evitar tonos similares a los
-            reservados para los padres de los novios.
+            Con delicadeza, te pedimos evitar tonos similares a los anteriores.
           </p>
         </div>
       </ScrollReveal>
