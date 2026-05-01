@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 
 // "Te Regalo" — Carla Morrison
-// Coloca el archivo MP3 en /public/te-regalo.mp3
-const AUDIO_SRC = "/te-regalo.mp3";
+// Archivo en /public/musica_fondo.mp3
+const AUDIO_SRC = "/musica_fondo.mp3";
 
 export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -52,7 +52,7 @@ export default function AudioPlayer() {
       className={`audio-player-btn ${isPlaying ? "audio-player-btn--playing" : ""}`}
       onClick={toggleAudio}
       aria-label={isPlaying ? "Pausar música de fondo" : "Reproducir música de fondo"}
-      title={isPlaying ? "Pausar música" : "Reproducir música"}
+      title={isPlaying ? "⏸ Pausar · Te Regalo — Carla Morrison" : "▶ Reproducir música · Te Regalo — Carla Morrison"}
       id="audio-player-toggle"
     >
       {isPlaying ? (
