@@ -11,6 +11,7 @@ import Gallery from "@/components/Gallery";
 import GiftInfo from "@/components/GiftInfo";
 import RSVP from "@/components/RSVP";
 import AudioPlayer from "@/components/AudioPlayer";
+import DevFooter from "@/components/DevFooter";
 import { getGuestBySlug } from "@/services/guest.service";
 
 type Props = {
@@ -40,54 +41,64 @@ export default async function InvitacionDinamicaPage({ params }: Props) {
   }
 
   return (
-    <main className="modern-web-experience">
+    <main>
+      {/* ── 1. Hero a pantalla completa ── */}
       <Hero />
 
-      {/* --- SECCIÓN CLARA: PASE, FRASE Y PADRES --- */}
+      {/* ── 2. Sección clara: Padres y cita bíblica ── */}
       <section className="section-light">
         <div className="container text-center">
-          <GuestPass
-            guestName={guest.name}
-            totalGuests={guest.tickets}
-            tableNumber={guest.table ?? "—"}
-          />
           <StoryAndParents />
         </div>
       </section>
 
-      {/* --- DIVISOR PARALLAX --- */}
-      <ParallaxDivider
-        src="https://picsum.photos/id/1069/1920/600"
-        alt="Detalle floral"
-      />
+      {/* ── 3. Divisor Parallax ── */}
+      <ParallaxDivider src="/img-3.jpg" alt="Detalle floral" />
 
-      {/* --- SECCIÓN OSCURA: FECHA Y UBICACIONES --- */}
+      {/* ── 4. Sección oscura: Fecha y Ubicaciones ── */}
       <section className="section-dark">
         <div className="container text-center">
           <EventDetails />
         </div>
       </section>
 
-      {/* --- SECCIÓN CLARA: ITINERARIO Y CÓDIGO DE VESTIMENTA --- */}
+      {/* ── 5. Sección clara: Itinerario y Código de Vestimenta ── */}
       <section className="section-light">
         <div className="container text-center">
           <ItineraryAndDressCode />
         </div>
       </section>
 
-      {/* --- SECCIÓN OSCURA: SIN NIÑOS --- */}
+      {/* ── 6. Sección oscura: Sin Niños ── */}
       <NoChildren />
 
-      {/* --- GALERÍA --- */}
+      {/* ── 7. Galería ── */}
       <Gallery />
 
-      {/* --- SECCIÓN CLARA: INFORMACIÓN DE REGALO --- */}
+      {/* ── 8. Sección clara: Información de Regalo ── */}
       <GiftInfo />
 
-      {/* --- FOOTER: RSVP --- */}
-      <RSVP guestName={guest.name} slug={guest.slug} isConfirmed={guest.isConfirmed} />
+      {/* ── 9. Sección clara: Pase del invitado (nombre + pases) ── */}
+      <section className="section-light" style={{ paddingTop: 0 }}>
+        <div className="container text-center" style={{ paddingTop: 0 }}>
+          <GuestPass
+            guestName={guest.name}
+            totalGuests={guest.tickets}
+          />
+        </div>
+      </section>
 
-      {/* --- BOTÓN FLOTANTE DE AUDIO --- */}
+      {/* ── 10. RSVP con frase + confirmación ── */}
+      <RSVP
+        guestName={guest.name}
+        slug={guest.slug}
+        isConfirmed={guest.isConfirmed}
+      />
+
+      {/* ── 11. Footer del desarrollador ── */}
+      <DevFooter />
+
+      {/* ── Botón flotante de audio ── */}
       <AudioPlayer />
     </main>
   );

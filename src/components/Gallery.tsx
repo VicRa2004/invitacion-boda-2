@@ -1,24 +1,29 @@
 import ScrollReveal from "./ScrollReveal";
 
+const images = [
+  { src: "/img-1.jpg", alt: "Homero y Larissa, foto 1" },
+  { src: "/img-2.jpg", alt: "Homero y Larissa, foto 2" },
+  { src: "/img-3.jpg", alt: "Homero y Larissa, foto 3" },
+  { src: "/img-4.jpg", alt: "Homero y Larissa, foto 4" },
+  { src: "/img-5.jpg", alt: "Homero y Larissa, foto 5" },
+];
+
 export default function Gallery() {
-  const images = [1011, 1012, 1062, 1074, 1084];
   return (
-    <section className="section-light pt-0">
+    <section className="section-light">
       <ScrollReveal>
         <h2 className="section-title text-center">Nuestra Historia</h2>
         <div className="carousel">
-          {images.map((imageId, index) => (
+          {images.map((img, i) => (
             <img
-              key={imageId}
-              src={`https://picsum.photos/id/${imageId}/400/500`}
-              alt={`Galería foto ${index + 1}`}
+              key={i}
+              src={img.src}
+              alt={img.alt}
               className="carousel-item"
             />
           ))}
         </div>
-        <p className="carousel-hint text-center">
-          Desliza para ver más <span>→</span>
-        </p>
+        <p className="carousel-hint text-center">Desliza para ver más →</p>
       </ScrollReveal>
     </section>
   );

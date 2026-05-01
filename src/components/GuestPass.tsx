@@ -3,14 +3,9 @@ import ScrollReveal from "./ScrollReveal";
 interface GuestPassProps {
   guestName: string;
   totalGuests: number;
-  tableNumber: string | number;
 }
 
-export default function GuestPass({
-  guestName,
-  totalGuests,
-  tableNumber,
-}: GuestPassProps) {
+export default function GuestPass({ guestName, totalGuests }: GuestPassProps) {
   return (
     <ScrollReveal>
       <div className="guest-card">
@@ -19,10 +14,6 @@ export default function GuestPass({
           <div className="detail-item">
             <span className="detail-label">Pases</span>
             <span className="detail-value">{totalGuests}</span>
-          </div>
-          <div className="detail-item">
-            <span className="detail-label">Mesa</span>
-            <span className="detail-value">{tableNumber}</span>
           </div>
         </div>
       </div>

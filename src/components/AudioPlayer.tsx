@@ -2,10 +2,9 @@
 
 import { useState, useRef, useEffect } from "react";
 
-// Audio de fondo externo (libre de derechos - música clásica/instrumental romántica)
-// Fuente: Free Music Archive — Romantic / Wedding instrumental
-const AUDIO_SRC =
-  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+// "Te Regalo" — Carla Morrison
+// Coloca el archivo MP3 en /public/te-regalo.mp3
+const AUDIO_SRC = "/te-regalo.mp3";
 
 export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);

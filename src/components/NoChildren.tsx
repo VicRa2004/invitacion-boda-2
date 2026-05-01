@@ -5,36 +5,53 @@ export default function NoChildren() {
     <section className="section-dark no-children-section">
       <div className="container text-center">
         <ScrollReveal>
+          {/* Ícono: silueta infantil con señal de prohibición */}
           <div className="no-children-icon" aria-hidden="true">
-            {/* Silueta de niño con una línea diagonal (SVG inline) */}
             <svg
               viewBox="0 0 64 64"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="no-children-svg"
-              aria-label="No se permiten niños"
+              aria-label="Evento exclusivo para adultos, no se permiten niños"
             >
-              {/* Cabeza */}
-              <circle cx="32" cy="14" r="7" stroke="currentColor" strokeWidth="2.5" />
-              {/* Cuerpo */}
+              {/* Cabeza del niño (más pequeña y alta) */}
+              <circle cx="32" cy="11" r="6" stroke="currentColor" strokeWidth="2.5" />
+
+              {/* Cuerpo infantil (más corto) */}
               <path
-                d="M20 38 C20 28 44 28 44 38 L44 50 H38 V42 H26 V50 H20 Z"
+                d="M22 32 C22 22 42 22 42 32 L41 42 H35 V34 H29 V42 H23 Z"
                 stroke="currentColor"
                 strokeWidth="2.5"
                 strokeLinejoin="round"
               />
+
+              {/* Bracitos levantados (distingue de adulto) */}
+              <path
+                d="M22 26 L16 22"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+              <path
+                d="M42 26 L48 22"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+
+              {/* Círculo de prohibición */}
+              <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth="2.5" />
+
               {/* Línea diagonal de prohibición */}
               <line
-                x1="10"
-                y1="10"
-                x2="54"
-                y2="54"
+                x1="11"
+                y1="11"
+                x2="53"
+                y2="53"
                 stroke="currentColor"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
-              {/* Círculo de prohibición */}
-              <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth="2.5" />
             </svg>
           </div>
 
@@ -43,8 +60,8 @@ export default function NoChildren() {
           </h2>
 
           <p className="quote no-children-quote">
-            Amamos a los pequeños, pero esta noche queremos que los adultos se
-            diviertan sin preocupaciones.
+            Amamos profundamente a los pequeños, pero esta noche queremos que
+            los adultos disfruten, bailen y celebren sin preocupaciones.
           </p>
 
           <p className="no-children-badge">

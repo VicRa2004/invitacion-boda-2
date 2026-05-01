@@ -13,11 +13,10 @@ export default function Hero() {
           <p className="pre-title">Nuestra Boda</p>
           <h1 className="names">
             Homero
-            <br />
             <span>&</span>
-            <br />
             Larissa
           </h1>
+          <span className="hero-date-badge">27 · Junio · 2026</span>
         </ScrollReveal>
       </div>
     </section>

@@ -1,13 +1,13 @@
 export default function ParallaxDivider({
-  src,
-  alt,
+  src = "/img-2.jpg",
+  alt = "Detalle fotográfico",
 }: {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
 }) {
   return (
     <section className="image-break">
-      <img src="/img-1.jpg" alt={alt} className="parallax-img" />
+      <img src={src} alt={alt} className="parallax-img" />
     </section>
   );
 }

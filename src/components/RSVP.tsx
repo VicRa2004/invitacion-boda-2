@@ -18,8 +18,9 @@ export default function RSVP({
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  // Número de Lari
   const whatsappMsg = `¡Hola! Confirmo mi asistencia a la boda de Homero y Larissa. Mi nombre es: ${guestName}`;
-  const whatsappUrl = `https://wa.me/529932126695?text=${encodeURIComponent(whatsappMsg)}`;
+  const whatsappUrl = `https://wa.me/529932819325?text=${encodeURIComponent(whatsappMsg)}`;
 
   async function handleConfirm() {
     if (!slug || confirmed) return;
@@ -30,7 +31,6 @@ export default function RSVP({
       const res = await fetch(`/api/invitacion/${slug}/confirm`, {
         method: "POST",
       });
-
       const data = await res.json();
 
       if (res.ok) {
@@ -50,27 +50,45 @@ export default function RSVP({
     <section className="section-dark rsvp-section">
       <div className="container text-center">
         <ScrollReveal>
-          <h2 className="section-title text-white">Asistencia</h2>
+          {/* Frase principal */}
+          <p className="rsvp-important-phrase">
+            Tu asistencia es lo más importante para nosotros
+          </p>
+
+          <h2 className="section-title text-white">Confirmación de Asistencia</h2>
 
           {confirmed ? (
             /* ── Estado confirmado ── */
             <div className="rsvp-confirmed">
               <div className="rsvp-confirmed__icon">✓</div>
-              <p className="rsvp-confirmed__title">
-                ¡Asistencia confirmada!
-              </p>
+              <p className="rsvp-confirmed__title">¡Asistencia confirmada!</p>
               <p className="rsvp-confirmed__subtitle">
-                Gracias, {guestName}. ¡Nos vemos en la boda!
+                Gracias, {guestName}. ¡Nos vemos el 27 de Junio!
               </p>
               {message && <p className="rsvp-message">{message}</p>}
             </div>
           ) : (
             /* ── Estado pendiente ── */
             <>
-              <p className="text-white mb-2">
-                Por favor, confirma tu asistencia antes del
+              <p className="text-white mb-2" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
+                Confirma tu asistencia antes del
                 <br />
-                <strong className="text-gold">20 de Mayo del 2026</strong>
+                <strong className="text-gold">30 de Mayo del 2026</strong>
+              </p>
+
+              <p
+                className="text-white mb-2"
+                style={{
+                  fontSize: "0.92rem",
+                  color: "rgba(255,255,255,0.55)",
+                  fontStyle: "italic",
+                  maxWidth: "440px",
+                  margin: "0 auto 1.5rem",
+                  lineHeight: 1.7,
+                }}
+              >
+                "Cada lugar en nuestra mesa está reservado con amor;
+                saber que estarás ahí lo hace todo más especial."
               </p>
 
               {message && (
@@ -81,7 +99,7 @@ export default function RSVP({
                 {slug && (
                   <button
                     type="button"
-                    className="btn btn-solid-gold mt-2"
+                    className="btn btn-solid-gold"
                     onClick={handleConfirm}
                     disabled={loading}
                     id="rsvp-confirm-btn"
@@ -94,7 +112,7 @@ export default function RSVP({
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-outline-gold mt-2"
+                  className="btn btn-outline-gold"
                   id="rsvp-whatsapp-btn"
                 >
                   Contactar por WhatsApp
