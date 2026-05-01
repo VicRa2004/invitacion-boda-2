@@ -40,46 +40,33 @@ export default function ItineraryAndDressCode() {
           </p>
 
           {/* Colores de los padres */}
-          <p className="parent-colors-title">Colores de los padres</p>
           <div className="color-swatches">
             <div className="color-swatch">
               <div
                 className="color-swatch__circle"
-                style={{ backgroundColor: "#8B7355" }}
+                style={{ backgroundColor: "#C0674C" }}
               />
-              <span className="color-swatch__name">Café cálido</span>
+              <span className="color-swatch__name">Terracota</span>
             </div>
             <div className="color-swatch">
               <div
                 className="color-swatch__circle"
-                style={{ backgroundColor: "#C4A882" }}
+                style={{ backgroundColor: "#2E7D62" }}
               />
-              <span className="color-swatch__name">Champagne</span>
-            </div>
-            <div className="color-swatch">
-              <div
-                className="color-swatch__circle"
-                style={{ backgroundColor: "#6B7B8A" }}
-              />
-              <span className="color-swatch__name">Azul pizarra</span>
-            </div>
-            <div className="color-swatch">
-              <div
-                className="color-swatch__circle"
-                style={{ backgroundColor: "#9B8EA0" }}
-              />
-              <span className="color-swatch__name">Lavanda</span>
+              <span className="color-swatch__name">Verde esmeralda</span>
             </div>
           </div>
           <p
             style={{
-              fontSize: "0.75rem",
+              fontSize: "0.78rem",
               color: "var(--text-muted)",
-              marginTop: "0.75rem",
+              marginTop: "0.85rem",
               fontStyle: "italic",
+              lineHeight: 1.5,
             }}
           >
-            * Colores de referencia, pendientes de confirmar.
+            Con delicadeza, te pedimos evitar tonos similares a los
+            reservados para los padres de los novios.
           </p>
         </div>
       </ScrollReveal>
