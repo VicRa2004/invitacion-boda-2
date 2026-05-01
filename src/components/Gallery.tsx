@@ -12,7 +12,7 @@ export default function Gallery() {
   return (
     <section className="section-light">
       <ScrollReveal>
-        <h2 className="section-title text-center">Nuestra Historia</h2>
+        <h2 className="section-title gallery-title text-center">Nuestra Historia</h2>
         <div className="carousel">
           {images.map((img, i) => (
             <img

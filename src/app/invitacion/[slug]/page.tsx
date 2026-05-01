@@ -53,7 +53,7 @@ export default async function InvitacionDinamicaPage({ params }: Props) {
       </section>
 
       {/* ── 3. Divisor Parallax ── */}
-      <ParallaxDivider src="/img-3.jpg" alt="Detalle floral" />
+      <ParallaxDivider src="/img-8.jpg" alt="Homero y Larissa" portrait />
 
       {/* ── 4. Sección oscura: Fecha y Ubicaciones ── */}
       <section className="section-dark">

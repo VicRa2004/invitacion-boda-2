@@ -4,7 +4,7 @@
 
 .dash {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a1628 0%, var(--primary-blue) 40%, #162a4a 100%);
+  background: linear-gradient(135deg, #0e0c0b 0%, var(--bg-dark) 40%, #2a2220 100%);
   color: #ffffff;
 }
 
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background: rgba(15, 31, 56, 0.85);
+  background: rgba(28, 25, 23, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(197, 168, 128, 0.1);
@@ -141,7 +141,7 @@
 .dash__toggle-form {
   padding: 0.6rem 1.5rem;
   background: var(--accent-gold);
-  color: var(--primary-blue);
+  color: var(--bg-dark);
   border: none;
   border-radius: 50px;
   font-family: var(--font-sans);
@@ -449,7 +449,7 @@
   max-width: 520px;
   margin: 1rem;
   padding: 2rem;
-  background: rgba(15, 31, 56, 0.95);
+  background: rgba(28, 25, 23, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(197, 168, 128, 0.15);

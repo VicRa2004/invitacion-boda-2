@@ -9,7 +9,7 @@
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
-  background-color: var(--primary-blue);
+  background-color: var(--bg-dark);
 }
 
 /* ── Fondo decorativo ── */
@@ -140,7 +140,7 @@
   margin-top: 0.5rem;
   padding: 1rem;
   background: var(--accent-gold);
-  color: var(--primary-blue);
+  color: var(--bg-dark);
   border: none;
   border-radius: 50px;
   font-family: var(--font-sans);
