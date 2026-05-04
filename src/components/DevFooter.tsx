@@ -1,8 +1,8 @@
 export default function DevFooter() {
   return (
     <footer className="dev-footer">
-      <p className="dev-footer__text">
-        Diseñado con cariño por{" "}
+      <div className="dev-footer__text">
+        <span>Diseñado y desarrollado con cariño por</span>
         <a
           href="https://porfolio-dhz.pages.dev/"
           target="_blank"
@@ -11,7 +11,7 @@ export default function DevFooter() {
         >
           Victor Raúl García García
         </a>
-      </p>
+      </div>
     </footer>
   );
 }
