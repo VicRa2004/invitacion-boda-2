@@ -35,6 +35,7 @@ export default function EventDetails() {
           <div className="location-card">
             <h2 className="section-title text-gold">Recepción</h2>
             <p className="time">Al término de la ceremonia</p>
+            <p className="time">6:00 PM</p>
             <p className="place">Salón de eventos el “DOMO”</p>
             <p className="address">
               Calle Álvaro Obregón, Villa Tamulté de las Sabanas.
