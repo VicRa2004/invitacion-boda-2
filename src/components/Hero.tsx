@@ -9,15 +9,22 @@ export default function Hero() {
         className="hero-bg-image"
       />
       <div className="hero-overlay">
-        <ScrollReveal delay={0.2}>
-          <p className="pre-title">Nuestra Boda</p>
-          <h1 className="names">
-            Homero
-            <span>&</span>
-            Larissa
-          </h1>
-          <span className="hero-date-badge">27 · Junio · 2026</span>
-        </ScrollReveal>
+        <div className="hero-top">
+          <ScrollReveal delay={0.2}>
+            <p className="pre-title">Nuestra Boda</p>
+          </ScrollReveal>
+        </div>
+        
+        <div className="hero-bottom">
+          <ScrollReveal delay={0.4}>
+            <h1 className="names">
+              Homero
+              <span>&</span>
+              Larissa
+            </h1>
+            <span className="hero-date-badge">27 · Junio · 2026</span>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
