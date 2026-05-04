@@ -18,9 +18,12 @@ export default function RSVP({
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // Número de Lari
-  const whatsappMsg = `¡Hola! Confirmo mi asistencia a la boda de Homero y Larissa. Mi nombre es: ${guestName}`;
-  const whatsappUrl = `https://wa.me/529932126695?text=${encodeURIComponent(whatsappMsg)}`;
+  // Mensajes de WhatsApp
+  const msgConfirm = `¡Hola! Confirmo mi asistencia a la boda de Homero y Larissa. Mi nombre es: ${guestName}`;
+  const urlConfirm = `https://wa.me/529932126695?text=${encodeURIComponent(msgConfirm)}`;
+
+  const msgDecline = `¡Hola! Lamentablemente no podré asistir a la boda de Homero y Larissa. Mi nombre es: ${guestName}`;
+  const urlDecline = `https://wa.me/529932126695?text=${encodeURIComponent(msgDecline)}`;
 
   async function handleConfirm() {
     if (!slug || confirmed) return;
@@ -100,27 +103,28 @@ export default function RSVP({
                 <p className="rsvp-message rsvp-message--error">{message}</p>
               )}
 
-              <div className="rsvp-actions">
-                {slug && (
-                  <button
-                    type="button"
-                    className="btn btn-solid-gold"
-                    onClick={handleConfirm}
-                    disabled={loading}
-                    id="rsvp-confirm-btn"
-                  >
-                    {loading ? "Confirmando..." : "Confirmar asistencia"}
-                  </button>
-                )}
+              <div className="rsvp-actions" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+                <a
+                  href={urlConfirm}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-solid-gold"
+                  style={{ width: "100%", maxWidth: "250px", padding: "0.6rem 1rem", color: "#fff" }}
+                  id="rsvp-confirm-whatsapp"
+                  onClick={() => handleConfirm()}
+                >
+                  Confirmar asistencia
+                </a>
 
                 <a
-                  href={whatsappUrl}
+                  href={urlDecline}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-outline-gold"
-                  id="rsvp-whatsapp-btn"
+                  style={{ width: "100%", maxWidth: "250px", padding: "0.6rem 1rem", color: "#fff" }}
+                  id="rsvp-decline-whatsapp"
                 >
-                  Contactar por WhatsApp
+                  No podré asistir
                 </a>
               </div>
             </>
