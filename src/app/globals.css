@@ -146,7 +146,8 @@ section {
   color: var(--color-warm);
   letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
+  font-weight: 900;
   margin-bottom: 1rem;
 }
 

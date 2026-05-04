@@ -20,7 +20,7 @@ export default function RSVP({
 
   // Número de Lari
   const whatsappMsg = `¡Hola! Confirmo mi asistencia a la boda de Homero y Larissa. Mi nombre es: ${guestName}`;
-  const whatsappUrl = `https://wa.me/529932819325?text=${encodeURIComponent(whatsappMsg)}`;
+  const whatsappUrl = `https://wa.me/529932126695?text=${encodeURIComponent(whatsappMsg)}`;
 
   async function handleConfirm() {
     if (!slug || confirmed) return;
@@ -55,7 +55,9 @@ export default function RSVP({
             Tu asistencia es lo más importante para nosotros
           </p>
 
-          <h2 className="section-title text-white">Confirmación de Asistencia</h2>
+          <h2 className="section-title text-white">
+            Confirmación de Asistencia
+          </h2>
 
           {confirmed ? (
             /* ── Estado confirmado ── */
@@ -70,7 +72,10 @@ export default function RSVP({
           ) : (
             /* ── Estado pendiente ── */
             <>
-              <p className="text-white mb-2" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
+              <p
+                className="text-white mb-2"
+                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
+              >
                 Confirma tu asistencia antes del
                 <br />
                 <strong className="text-gold">30 de Mayo del 2026</strong>
@@ -87,8 +92,8 @@ export default function RSVP({
                   lineHeight: 1.7,
                 }}
               >
-                "Cada lugar en nuestra mesa está reservado con amor;
-                saber que estarás ahí lo hace todo más especial."
+                "Cada lugar en nuestra mesa está reservado con amor; saber que
+                estarás ahí lo hace todo más especial."
               </p>
 
               {message && (

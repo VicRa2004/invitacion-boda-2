@@ -14,7 +14,7 @@ export default function EventDetails() {
       <div className="locations-grid">
         <ScrollReveal delay={0.2}>
           <div className="location-card">
-            <h2 className="section-title text-gold">Ceremonia</h2>
+            <h2 className="section-title text-gold">Ceremonia Religiosa</h2>
             <p className="time">4:00 PM</p>
             <p className="place">Parroquia San Francisco de Asís</p>
             <p className="address">

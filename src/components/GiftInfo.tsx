@@ -47,12 +47,14 @@ export default function GiftInfo() {
             </svg>
           </div>
 
-          <h2 className="section-title gift-title">¿Deseas tener un detalle con nosotros?</h2>
+          <h2 className="section-title gift-title">
+            ¿Deseas tener un detalle con nosotros?
+          </h2>
 
           <div className="gift-card">
             <p className="gift-primary-text">
               La <strong>asistencia es lo más importante</strong> para nosotros,
-              el regalo es completamente opcional.
+              el regalo es opcional.
             </p>
             <div className="gift-divider">
               <span>✦</span>
