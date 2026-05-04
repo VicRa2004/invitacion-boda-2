@@ -1,7 +1,10 @@
 import Link from "next/link";
 import "./home.css";
+import { getSession } from "@/lib/auth";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const session = await getSession();
+
   return (
     <main className="home">
       {/* ── Fondo decorativo ── */}
@@ -21,9 +24,15 @@ export default function HomePage() {
         </p>
 
         <div className="home__actions">
-          <Link href="/login" className="btn btn-solid-gold" id="home-login-btn">
-            Iniciar sesión
-          </Link>
+          {session ? (
+            <Link href="/dashboard" className="btn btn-solid-gold" id="home-dashboard-btn">
+              Ir al dashboard
+            </Link>
+          ) : (
+            <Link href="/login" className="btn btn-solid-gold" id="home-login-btn">
+              Iniciar sesión
+            </Link>
+          )}
           <Link
             href="/invitacion"
             className="btn btn-outline-gold"
