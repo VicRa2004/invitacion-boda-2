@@ -18,7 +18,7 @@ export default function EventDetails() {
             <p className="time">4:00 PM</p>
             <p className="place">Parroquia San Francisco de Asís</p>
             <p className="address">
-              Villa Tamulté de las Sábanas, Centro, Tabasco.
+              Villa Tamulté de las Sabanas, Centro, Tabasco.
             </p>
             <a
               href="https://maps.google.com/?q=Parroquia+San+Francisco+de+Asis+Villa+Tamulte"
