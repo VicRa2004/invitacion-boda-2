@@ -10,7 +10,11 @@ export default function ParallaxDivider({
   if (portrait) {
     return (
       <section className="image-break image-break--portrait">
-        <img src={src} alt={alt} className="parallax-img parallax-img--portrait" />
+        <img
+          src={src}
+          alt={alt}
+          className="parallax-img parallax-img--portrait"
+        />
       </section>
     );
   }

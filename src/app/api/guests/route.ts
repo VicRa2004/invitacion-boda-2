@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { getSession } from "../../../lib/auth";
-import { createGuest, getGuests, getGuestBySlug } from "../../../services/guest.service";
+import {
+  createGuest,
+  getGuestBySlug,
+  getGuests,
+} from "../../../services/guest.service";
 
 /**
  * Genera un slug a partir de un nombre.
@@ -100,4 +104,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

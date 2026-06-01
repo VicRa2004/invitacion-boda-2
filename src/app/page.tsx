@@ -17,19 +17,27 @@ export default async function HomePage() {
         <span className="home__divider" />
 
         <p className="home__description">
-          Esta es la plataforma oficial de nuestra boda. Aquí podrás consultar tu
-          invitación personalizada con los detalles del evento, confirmar tu
-          asistencia y conocer toda la información que necesitas para acompañarnos
-          en este día tan especial.
+          Esta es la plataforma oficial de nuestra boda. Aquí podrás consultar
+          tu invitación personalizada con los detalles del evento, confirmar tu
+          asistencia y conocer toda la información que necesitas para
+          acompañarnos en este día tan especial.
         </p>
 
         <div className="home__actions">
           {session ? (
-            <Link href="/dashboard" className="btn btn-solid-gold" id="home-dashboard-btn">
+            <Link
+              href="/dashboard"
+              className="btn btn-solid-gold"
+              id="home-dashboard-btn"
+            >
               Ir al dashboard
             </Link>
           ) : (
-            <Link href="/login" className="btn btn-solid-gold" id="home-login-btn">
+            <Link
+              href="/login"
+              className="btn btn-solid-gold"
+              id="home-login-btn"
+            >
               Iniciar sesión
             </Link>
           )}

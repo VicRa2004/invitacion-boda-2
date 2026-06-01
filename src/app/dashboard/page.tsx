@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { type FormEvent, useEffect, useState } from "react";
 import "./dashboard.css";
 
 type Guest = {
@@ -107,8 +107,6 @@ export default function DashboardPage() {
     router.push("/login");
   }
 
-
-
   // ── Crear invitado ──
   async function handleCreateGuest(e: FormEvent) {
     e.preventDefault();
@@ -129,7 +127,10 @@ export default function DashboardPage() {
         return;
       }
 
-      setMessage({ type: "success", text: `¡"${data.guest.name}" fue añadido exitosamente!` });
+      setMessage({
+        type: "success",
+        text: `¡"${data.guest.name}" fue añadido exitosamente!`,
+      });
       setFormData({ name: "", tickets: 1, table: "" });
       setShowForm(false);
       fetchGuests();
@@ -180,12 +181,18 @@ export default function DashboardPage() {
       });
 
       if (res.ok) {
-        setMessage({ type: "success", text: `"${editData.name}" fue actualizado.` });
+        setMessage({
+          type: "success",
+          text: `"${editData.name}" fue actualizado.`,
+        });
         setEditGuest(null);
         fetchGuests();
       } else {
         const data = await res.json();
-        setMessage({ type: "error", text: data.error || "Error al actualizar." });
+        setMessage({
+          type: "error",
+          text: data.error || "Error al actualizar.",
+        });
       }
     } catch {
       setMessage({ type: "error", text: "Error de conexión." });
@@ -234,9 +241,7 @@ export default function DashboardPage() {
       <header className="dash__header">
         <span className="dash__brand">H &amp; L</span>
         <div className="dash__user-area">
-          <span className="dash__user-name">
-            {user?.name || user?.email}
-          </span>
+          <span className="dash__user-name">{user?.name || user?.email}</span>
           <button
             type="button"
             className="dash__logout"
@@ -458,7 +463,9 @@ export default function DashboardPage() {
                             onClick={() => handleCopyLink(guest.slug, guest.id)}
                             title="Copiar link de invitación"
                           >
-                            {copiedId === guest.id ? "✓ ¡Copiado!" : "📋 Copiar link"}
+                            {copiedId === guest.id
+                              ? "✓ ¡Copiado!"
+                              : "📋 Copiar link"}
                           </button>
                           <button
                             type="button"
@@ -488,10 +495,7 @@ export default function DashboardPage() {
       {/* ── Modal de edición ── */}
       {editGuest && (
         <div className="dash__modal-overlay" onClick={() => setEditGuest(null)}>
-          <div
-            className="dash__modal"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="dash__modal" onClick={(e) => e.stopPropagation()}>
             <div className="dash__modal-header">
               <h3 className="dash__modal-title">Editar invitado</h3>
               <button

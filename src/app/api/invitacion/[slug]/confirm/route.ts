@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
-import { getGuestBySlug, confirmGuest } from "../../../../../services/guest.service";
+import {
+  confirmGuest,
+  getGuestBySlug,
+} from "../../../../../services/guest.service";
 
 /**
  * POST /api/invitacion/[slug]/confirm

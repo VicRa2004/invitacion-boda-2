@@ -7,9 +7,9 @@
  */
 
 import "dotenv/config";
-import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcrypt";
+import { PrismaClient } from "../src/generated/prisma/client";
 
 // ─── Valores por defecto ────────────────────────────────────────────
 const DEFAULT_EMAIL = "admin@boda.com";

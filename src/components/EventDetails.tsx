@@ -36,12 +36,10 @@ export default function EventDetails() {
             <h2 className="section-title text-gold">Recepción</h2>
             <p className="time">Al término de la ceremonia</p>
             <p className="time">6:00 PM</p>
-            <p className="place">Salón de eventos el “DOMO”</p>
-            <p className="address">
-              Calle Álvaro Obregón, Villa Tamulté de las Sabanas.
-            </p>
+            <p className="place">Quinta “Flor de Guásimo”</p>
+            <p className="address">Ranchería San Julián, Centro, Tabasco.</p>
             <a
-              href="https://maps.google.com/?q=Salon+Domo+Alvaro+Obregon+Villa+Tamulte"
+              href="https://maps.app.goo.gl/UQ4XsuFdFhdCBxpw8"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline-gold"

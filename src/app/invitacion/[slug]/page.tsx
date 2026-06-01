@@ -1,17 +1,17 @@
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
-import GuestPass from "@/components/GuestPass";
-import StoryAndParents from "@/components/StoryAndParents";
-import ParallaxDivider from "@/components/ParallaxDivider";
-import EventDetails from "@/components/EventDetails";
-import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
-import NoChildren from "@/components/NoChildren";
-import Gallery from "@/components/Gallery";
-import GiftInfo from "@/components/GiftInfo";
-import RSVP from "@/components/RSVP";
+import { notFound } from "next/navigation";
 import AudioPlayer from "@/components/AudioPlayer";
 import DevFooter from "@/components/DevFooter";
+import EventDetails from "@/components/EventDetails";
+import Gallery from "@/components/Gallery";
+import GiftInfo from "@/components/GiftInfo";
+import GuestPass from "@/components/GuestPass";
+import Hero from "@/components/Hero";
+import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
+import NoChildren from "@/components/NoChildren";
+import ParallaxDivider from "@/components/ParallaxDivider";
+import RSVP from "@/components/RSVP";
+import StoryAndParents from "@/components/StoryAndParents";
 import { getGuestBySlug } from "@/services/guest.service";
 
 type Props = {
@@ -81,10 +81,7 @@ export default async function InvitacionDinamicaPage({ params }: Props) {
       {/* ── 9. Sección clara: Pase del invitado (nombre + pases) ── */}
       <section className="section-light" style={{ paddingTop: 0 }}>
         <div className="container text-center" style={{ paddingTop: 0 }}>
-          <GuestPass
-            guestName={guest.name}
-            totalGuests={guest.tickets}
-          />
+          <GuestPass guestName={guest.name} totalGuests={guest.tickets} />
         </div>
       </section>
 

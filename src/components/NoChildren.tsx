@@ -15,7 +15,13 @@ export default function NoChildren() {
               aria-label="Evento exclusivo para adultos, no se permiten niños"
             >
               {/* Cabeza del niño (más pequeña y alta) */}
-              <circle cx="32" cy="11" r="6" stroke="currentColor" strokeWidth="2.5" />
+              <circle
+                cx="32"
+                cy="11"
+                r="6"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              />
 
               {/* Cuerpo infantil (más corto) */}
               <path
@@ -40,7 +46,13 @@ export default function NoChildren() {
               />
 
               {/* Círculo de prohibición */}
-              <circle cx="32" cy="32" r="28" stroke="currentColor" strokeWidth="2.5" />
+              <circle
+                cx="32"
+                cy="32"
+                r="28"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              />
 
               {/* Línea diagonal de prohibición */}
               <line
@@ -65,7 +77,8 @@ export default function NoChildren() {
           </p>
 
           <p className="no-children-badge">
-            <span>✦</span>&nbsp; Evento exclusivo para adultos &nbsp;<span>✦</span>
+            <span>✦</span>&nbsp; Evento exclusivo para adultos &nbsp;
+            <span>✦</span>
           </p>
         </ScrollReveal>
       </div>

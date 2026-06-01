@@ -3,18 +3,18 @@
    ========================================= */
 :root {
   /* Nueva paleta cálida */
-  --color-cream:    #d3c5b8;
-  --color-sand:     #ecd8bf;
-  --color-gold:     #bda67c;
-  --color-taupe:    #c0b9a9;
-  --color-warm:     #e3bf92;
+  --color-cream: #d3c5b8;
+  --color-sand: #ecd8bf;
+  --color-gold: #bda67c;
+  --color-taupe: #c0b9a9;
+  --color-warm: #e3bf92;
 
   /* Semánticos */
-  --accent-gold:    var(--color-gold);
-  --bg-light:       #faf7f4;           /* Blanco cálido */
-  --bg-dark:        #1c1917;           /* Neutro oscuro (stone-900) */
-  --text-dark:      #2d2926;
-  --text-muted:     #78716c;
+  --accent-gold: var(--color-gold);
+  --bg-light: #faf7f4; /* Blanco cálido */
+  --bg-dark: #1c1917; /* Neutro oscuro (stone-900) */
+  --text-dark: #2d2926;
+  --text-muted: #78716c;
 }
 
 * {
@@ -38,32 +38,64 @@ body {
 }
 
 /* Utilidades de texto */
-.text-center  { text-align: center; }
-.text-white   { color: #ffffff !important; }
-.text-gold    { color: var(--accent-gold) !important; }
-.mt-2         { margin-top: 1.5rem; }
-.mt-4         { margin-top: 3rem; }
-.mb-2         { margin-bottom: 1.5rem; }
-.mb-4         { margin-bottom: 3rem; }
-.pt-0         { padding-top: 0 !important; }
+.text-center {
+  text-align: center;
+}
+.text-white {
+  color: #ffffff !important;
+}
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+.mt-2 {
+  margin-top: 1.5rem;
+}
+.mt-4 {
+  margin-top: 3rem;
+}
+.mb-2 {
+  margin-bottom: 1.5rem;
+}
+.mb-4 {
+  margin-bottom: 3rem;
+}
+.pt-0 {
+  padding-top: 0 !important;
+}
 
 /* =========================================
    ANIMACIONES GLOBALES
    ========================================= */
 @keyframes slowZoom {
-  0%   { transform: scale(1); }
-  100% { transform: scale(1.08); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
 }
 
 @keyframes float {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================
@@ -75,9 +107,9 @@ section {
 }
 
 .container {
-  max-width: 680px;       /* Más estrecho → más legible en móvil */
+  max-width: 680px; /* Más estrecho → más legible en móvil */
   margin: 0 auto;
-  padding: 4rem 1.5rem;   /* Menos padding vertical en mobile */
+  padding: 4rem 1.5rem; /* Menos padding vertical en mobile */
 }
 
 @media (min-width: 768px) {
@@ -111,8 +143,10 @@ section {
 
 .hero-bg-image {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   animation: slowZoom 22s alternate infinite ease-in-out;
   z-index: 1;
@@ -125,10 +159,11 @@ section {
   background: linear-gradient(
     to bottom,
     rgba(28, 25, 23, 0.45) 0%,
-    rgba(28, 25, 23, 0.20) 50%,
+    rgba(28, 25, 23, 0.2) 50%,
     rgba(28, 25, 23, 0.55) 100%
   );
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -136,7 +171,8 @@ section {
   padding: 12vh 1.5rem 10vh;
 }
 
-.hero-top, .hero-bottom {
+.hero-top,
+.hero-bottom {
   width: 100%;
 }
 
@@ -228,7 +264,7 @@ section {
   border-radius: 24px;
   padding: 2.5rem 1.5rem;
   box-shadow:
-    0 4px 6px rgba(0,0,0,0.03),
+    0 4px 6px rgba(0, 0, 0, 0.03),
     0 20px 48px rgba(189, 166, 124, 0.12);
   max-width: 500px;
   margin: 0 auto 2rem auto;
@@ -325,7 +361,9 @@ section {
 }
 
 @media (min-width: 640px) {
-  .parents-divider { display: block; }
+  .parents-divider {
+    display: block;
+  }
 }
 
 /* =========================================
@@ -333,8 +371,8 @@ section {
    ========================================= */
 .date-box {
   display: inline-block;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1.2rem 3rem;
   font-family: var(--font-serif);
 }
@@ -432,11 +470,10 @@ section {
 .parallax-img--portrait {
   width: 100%;
   height: auto;
-  max-width: 560px;  /* Razonable en desktop */
+  max-width: 560px; /* Razonable en desktop */
   object-fit: unset;
   display: block;
 }
-
 
 @media (min-width: 768px) {
   .parallax-img {
@@ -460,7 +497,9 @@ section {
   -webkit-overflow-scrolling: touch;
 }
 
-.carousel::-webkit-scrollbar { display: none; }
+.carousel::-webkit-scrollbar {
+  display: none;
+}
 
 .carousel-item {
   scroll-snap-align: center;
@@ -589,7 +628,7 @@ section {
   height: 48px;
   border-radius: 50%;
   border: 2px solid rgba(189, 166, 124, 0.25);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .color-swatch__name {
@@ -661,8 +700,14 @@ section {
 }
 
 @keyframes rsvpReveal {
-  from { opacity: 0; transform: scale(0.92); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .rsvp-confirmed__icon {
@@ -681,9 +726,15 @@ section {
 }
 
 @keyframes checkBounce {
-  0%   { transform: scale(0); }
-  60%  { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .rsvp-confirmed__title {
@@ -787,7 +838,9 @@ section {
 /* =========================================
    GIFT INFO — SECCIÓN DE REGALO
    ========================================= */
-.gift-section { padding: 0; }
+.gift-section {
+  padding: 0;
+}
 
 .gift-envelope-wrapper {
   margin: 0 auto 2rem;
@@ -855,9 +908,15 @@ section {
    AUDIO PLAYER — BOTÓN FLOTANTE
    ========================================= */
 @keyframes audioPulse {
-  0%   { box-shadow: 0 0 0 0   rgba(189, 166, 124, 0.55); }
-  70%  { box-shadow: 0 0 0 14px rgba(189, 166, 124, 0); }
-  100% { box-shadow: 0 0 0 0   rgba(189, 166, 124, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(189, 166, 124, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(189, 166, 124, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(189, 166, 124, 0);
+  }
 }
 
 .audio-player-btn {
@@ -876,7 +935,10 @@ section {
   background: var(--bg-dark);
   color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
   outline: none;
 }
 

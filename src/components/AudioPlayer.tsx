@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // "Te Regalo" — Carla Morrison
 // Archivo en /public/musica_fondo.mp3
@@ -36,13 +36,16 @@ export default function AudioPlayer() {
       audio.pause();
       setIsPlaying(false);
     } else {
-      audio.play().then(() => {
-        setIsPlaying(true);
-        setIsReady(true);
-      }).catch(() => {
-        // El navegador bloqueó el autoplay, igual actualizamos UI
-        setIsPlaying(false);
-      });
+      audio
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+          setIsReady(true);
+        })
+        .catch(() => {
+          // El navegador bloqueó el autoplay, igual actualizamos UI
+          setIsPlaying(false);
+        });
     }
   }
 
@@ -51,18 +54,32 @@ export default function AudioPlayer() {
       type="button"
       className={`audio-player-btn ${isPlaying ? "audio-player-btn--playing" : ""}`}
       onClick={toggleAudio}
-      aria-label={isPlaying ? "Pausar música de fondo" : "Reproducir música de fondo"}
-      title={isPlaying ? "⏸ Pausar · Te Regalo — Carla Morrison" : "▶ Reproducir música · Te Regalo — Carla Morrison"}
+      aria-label={
+        isPlaying ? "Pausar música de fondo" : "Reproducir música de fondo"
+      }
+      title={
+        isPlaying
+          ? "⏸ Pausar · Te Regalo — Carla Morrison"
+          : "▶ Reproducir música · Te Regalo — Carla Morrison"
+      }
       id="audio-player-toggle"
     >
       {isPlaying ? (
         /* Ícono de nota musical (activo) */
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
         </svg>
       ) : (
         /* Ícono de nota musical silenciada */
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" opacity="0.4" />
           <line
             x1="3"

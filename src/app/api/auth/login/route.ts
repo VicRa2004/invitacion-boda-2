@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { getUserByEmail, verifyPassword } from "../../../../services/user.service";
 import { setSession } from "../../../../lib/auth";
+import {
+  getUserByEmail,
+  verifyPassword,
+} from "../../../../services/user.service";
 
 export async function POST(request: Request) {
   try {

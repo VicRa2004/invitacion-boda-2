@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "../../../../lib/auth";
-import {
-  deleteGuest,
-  updateGuest,
-} from "../../../../services/guest.service";
+import { deleteGuest, updateGuest } from "../../../../services/guest.service";
 
 /**
  * PATCH /api/guests/:id — Actualiza un invitado.

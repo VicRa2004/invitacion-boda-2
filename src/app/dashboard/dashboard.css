@@ -4,7 +4,12 @@
 
 .dash {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0e0c0b 0%, var(--bg-dark) 40%, #2a2220 100%);
+  background: linear-gradient(
+    135deg,
+    #0e0c0b 0%,
+    var(--bg-dark) 40%,
+    #2a2220 100%
+  );
   color: #ffffff;
 }
 
@@ -296,8 +301,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Tabla de invitados ── */
@@ -439,8 +450,12 @@
 }
 
 @keyframes modalOverlayIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ── Modal contenedor ── */
@@ -584,7 +599,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ── Responsive ── */

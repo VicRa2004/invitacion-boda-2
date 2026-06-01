@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="pre-title">Nuestra Boda</p>
           </ScrollReveal>
         </div>
-        
+
         <div className="hero-bottom">
           <ScrollReveal delay={0.4}>
             <h1 className="names">

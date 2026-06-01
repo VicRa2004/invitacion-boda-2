@@ -1,15 +1,15 @@
-import Hero from "@/components/Hero";
-import GuestPass from "@/components/GuestPass";
-import StoryAndParents from "@/components/StoryAndParents";
-import ParallaxDivider from "@/components/ParallaxDivider";
-import EventDetails from "@/components/EventDetails";
-import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
-import NoChildren from "@/components/NoChildren";
-import Gallery from "@/components/Gallery";
-import GiftInfo from "@/components/GiftInfo";
-import RSVP from "@/components/RSVP";
 import AudioPlayer from "@/components/AudioPlayer";
 import DevFooter from "@/components/DevFooter";
+import EventDetails from "@/components/EventDetails";
+import Gallery from "@/components/Gallery";
+import GiftInfo from "@/components/GiftInfo";
+import GuestPass from "@/components/GuestPass";
+import Hero from "@/components/Hero";
+import ItineraryAndDressCode from "@/components/ItineraryAndDressCode";
+import NoChildren from "@/components/NoChildren";
+import ParallaxDivider from "@/components/ParallaxDivider";
+import RSVP from "@/components/RSVP";
+import StoryAndParents from "@/components/StoryAndParents";
 
 /**
  * Vista de ejemplo de la invitación (sin datos reales de BD).

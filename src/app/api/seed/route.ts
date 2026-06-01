@@ -7,7 +7,10 @@ import { createUser, getUserByEmail } from "../../../services/user.service";
  */
 export async function GET() {
   if (process.env.NODE_ENV === "production") {
-    return NextResponse.json({ error: "No disponible en producción." }, { status: 403 });
+    return NextResponse.json(
+      { error: "No disponible en producción." },
+      { status: 403 },
+    );
   }
 
   const email = "admin@boda.com";
