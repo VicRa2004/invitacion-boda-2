@@ -37,7 +37,7 @@ export default function EventDetails() {
             <p className="time">Al término de la ceremonia</p>
             <p className="time">6:00 PM</p>
             <p className="place">Quinta “Flor de Guásimo”</p>
-            <p className="address">Ranchería San Julián, Centro, Tabasco.</p>
+            <p className="address">Ranchería Jolochero, Centro, Tabasco.</p>
             <a
               href="https://maps.app.goo.gl/UQ4XsuFdFhdCBxpw8"
               target="_blank"
