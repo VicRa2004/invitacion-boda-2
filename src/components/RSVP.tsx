@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 interface RSVPProps {
@@ -15,16 +15,7 @@ export default function RSVP({
   isConfirmed: initialConfirmed = false,
 }: RSVPProps) {
   const [confirmed, setConfirmed] = useState(initialConfirmed);
-  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [isPastDeadline, setIsPastDeadline] = useState(false);
-
-  useEffect(() => {
-    const deadline = new Date(2026, 5, 11); // 11 de Junio del 2026 (mes 5 es Junio)
-    if (new Date() >= deadline) {
-      setIsPastDeadline(true);
-    }
-  }, []);
 
   // Mensajes de WhatsApp
   const msgConfirm = `¡Hola! Confirmo mi asistencia a la boda de Homero y Larissa. Mi nombre es: ${guestName}`;
@@ -35,7 +26,6 @@ export default function RSVP({
 
   async function handleConfirm() {
     if (!slug || confirmed) return;
-    setLoading(true);
     setMessage("");
 
     try {
@@ -52,8 +42,6 @@ export default function RSVP({
       }
     } catch {
       setMessage("Error de conexión. Intenta de nuevo.");
-    } finally {
-      setLoading(false);
     }
   }
 
@@ -80,80 +68,17 @@ export default function RSVP({
               </p>
               {message && <p className="rsvp-message">{message}</p>}
             </div>
-          ) : isPastDeadline ? (
-            /* ── Estado pendiente después de la fecha límite ── */
-            <>
-              <p
-                className="text-white mb-2"
-                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
-              >
-                El periodo de confirmación ha finalizado
-                <br />
-                La fecha límite fue el{" "}
-                <strong className="text-gold">10 de Junio del 2026</strong>
-              </p>
-
-              <p
-                className="text-white mb-2"
-                style={{
-                  fontSize: "0.92rem",
-                  color: "rgba(255,255,255,0.55)",
-                  fontStyle: "italic",
-                  maxWidth: "440px",
-                  margin: "0 auto 1.5rem",
-                  lineHeight: 1.7,
-                }}
-              >
-                "Cada lugar en nuestra mesa está reservado con amor; el plazo de
-                confirmación ha concluido."
-              </p>
-
-              <div
-                className="rsvp-actions"
-                style={{
-                  display: "flex",
-                  gap: "1rem",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <a
-                  href={`https://wa.me/529932126695?text=${encodeURIComponent("¡Hola! Tengo una duda sobre la invitación a la boda de Homero y Larissa.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline-gold"
-                  style={{
-                    width: "100%",
-                    maxWidth: "250px",
-                    padding: "0.6rem 1rem",
-                    color: "#fff",
-                  }}
-                >
-                  Contactar por WhatsApp
-                </a>
-              </div>
-            </>
           ) : (
-            /* ── Estado pendiente dentro del plazo ── */
+            /* ── Estado pendiente ── */
             <>
               <p
-                className="text-white mb-2"
-                style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
-              >
-                Confirma tu asistencia antes del
-                <br />
-                <strong className="text-gold">10 de Junio del 2026</strong>
-              </p>
-
-              <p
-                className="text-white mb-2"
+                className="text-white mb-4"
                 style={{
                   fontSize: "0.92rem",
                   color: "rgba(255,255,255,0.55)",
                   fontStyle: "italic",
                   maxWidth: "440px",
-                  margin: "0 auto 1.5rem",
+                  margin: "0 auto 2rem",
                   lineHeight: 1.7,
                 }}
               >
